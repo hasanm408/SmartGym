@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_screen_gradient"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/tvDashboardTitle"
+        style="@style/SmartGymTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dashboard"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDashboardSubtitle"
+        style="@style/SmartGymSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Train better with guided workouts and bookings."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDashboardTitle" />
+
+    <TextView
+        android:id="@+id/tvSectionLabel"
+        style="@style/SmartGymSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Your quick actions"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDashboardSubtitle" />
+
+    <Button
+        android:id="@+id/btnViewTrainers"
+        style="@style/SmartGymPrimaryButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:drawableStart="@android:drawable/ic_menu_myplaces"
+        android:drawablePadding="10dp"
+        android:gravity="start|center_vertical"
+        android:text="  View Trainers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSectionLabel" />
+
+    <Button
+        android:id="@+id/btnWorkoutPlans"
+        style="@style/SmartGymPrimaryButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:drawableStart="@android:drawable/ic_menu_agenda"
+        android:drawablePadding="10dp"
+        android:gravity="start|center_vertical"
+        android:text="  Workout Plans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnViewTrainers" />
+
+    <Button
+        android:id="@+id/btnMyBookings"
+        style="@style/SmartGymPrimaryButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:drawableStart="@android:drawable/ic_menu_today"
+        android:drawablePadding="10dp"
+        android:gravity="start|center_vertical"
+        android:text="  My Bookings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnWorkoutPlans" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

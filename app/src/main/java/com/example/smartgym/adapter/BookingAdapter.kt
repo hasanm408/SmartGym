@@ -1,0 +1,37 @@
+package com.example.smartgym.adapter
+
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.example.smartgym.R
+import com.example.smartgym.model.Booking
+
+class BookingAdapter(private val bookingList: List<Booking>) :
+    RecyclerView.Adapter<BookingAdapter.BookingViewHolder>() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookingViewHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_booking, parent, false)
+        return BookingViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: BookingViewHolder, position: Int) {
+        holder.bind(bookingList[position])
+    }
+
+    override fun getItemCount(): Int = bookingList.size
+
+    inner class BookingViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val tvTrainerName: TextView = itemView.findViewById(R.id.tvBookingTrainerName)
+        private val tvDate: TextView = itemView.findViewById(R.id.tvBookingDate)
+        private val tvTime: TextView = itemView.findViewById(R.id.tvBookingTime)
+
+        fun bind(booking: Booking) {
+            tvTrainerName.text = booking.trainerName
+            tvDate.text = "Date: ${booking.date}"
+            tvTime.text = "Time: ${booking.time}"
+        }
+    }
+}
