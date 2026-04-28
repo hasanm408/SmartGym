@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/SmartGymTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Plan Creation &amp; Assignment"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        style="@style/SmartGymSubtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SELECT CLIENT"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinnerUser"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/bg_premium_input"
+                        android:padding="12dp" />
+
+                    <EditText
+                        android:id="@+id/etPlanTime"
+                        style="@style/SmartGymInputField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="Workout time (e.g. 6:00 PM)" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        style="@style/SmartGymSubtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="WEEKLY WORKOUT PLAN"
+                        android:textStyle="bold" />
+
+                    <TextView style="@style/SmartGymSubtitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Monday" />
+                    <Spinner android:id="@+id/spinnerMonday" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_premium_input" android:padding="12dp" />
+                    <TextView style="@style/SmartGymSubtitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Tuesday" />
+                    <Spinner android:id="@+id/spinnerTuesday" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_premium_input" android:padding="12dp" />
+                    <TextView style="@style/SmartGymSubtitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Wednesday" />
+                    <Spinner android:id="@+id/spinnerWednesday" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_premium_input" android:padding="12dp" />
+                    <TextView style="@style/SmartGymSubtitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Thursday" />
+                    <Spinner android:id="@+id/spinnerThursday" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_premium_input" android:padding="12dp" />
+                    <TextView style="@style/SmartGymSubtitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Friday" />
+                    <Spinner android:id="@+id/spinnerFriday" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_premium_input" android:padding="12dp" />
+                    <TextView style="@style/SmartGymSubtitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Saturday" />
+                    <Spinner android:id="@+id/spinnerSaturday" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_premium_input" android:padding="12dp" />
+                    <TextView style="@style/SmartGymSubtitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Sunday" />
+                    <Spinner android:id="@+id/spinnerSunday" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_premium_input" android:padding="12dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btnAssignPlan"
+                style="@style/SmartGymPrimaryButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Assign Plan to Client" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
