@@ -3,9 +3,7 @@ package com.example.smartgym
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class RegisterActivity : AppCompatActivity() {
@@ -13,28 +11,11 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        val etName = findViewById<EditText>(R.id.etRegisterName)
-        val etEmail = findViewById<EditText>(R.id.etRegisterEmail)
-        val etPassword = findViewById<EditText>(R.id.etRegisterPassword)
-        val btnRegister = findViewById<Button>(R.id.btnRegister)
-        val tvLogin = findViewById<TextView>(R.id.tvGoToLogin)
-
-        btnRegister.setOnClickListener {
-            val name = etName.text.toString().trim()
-            val email = etEmail.text.toString().trim()
-            val password = etPassword.text.toString().trim()
-
-            if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "Registration successful", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, LoginActivity::class.java))
-                finish()
-            }
+        findViewById<Button>(R.id.btnGetStarted).setOnClickListener {
+            startActivity(Intent(this, RoleSelectionActivity::class.java))
         }
 
-        tvLogin.setOnClickListener {
-            startActivity(Intent(this, LoginActivity::class.java))
+        findViewById<TextView>(R.id.tvBackToLogin).setOnClickListener {
             finish()
         }
     }

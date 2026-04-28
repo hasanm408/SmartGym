@@ -7,94 +7,54 @@
     android:padding="24dp">
 
     <TextView
-        android:id="@+id/tvRegisterTitle"
+        android:id="@+id/tvRegTitle"
         style="@style/SmartGymTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="60dp"
+        android:text="Start Your Journey"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvRegisterSubtitle"
+        android:id="@+id/tvRegSubtitle"
         style="@style/SmartGymSubtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:text="Create your account and start training smart."
+        android:layout_marginTop="8dp"
+        android:text="Join the ultimate fitness community"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvRegTitle" />
+
+    <ImageView
+        android:id="@+id/ivRegLogo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="48dp"
+        android:src="@mipmap/ic_launcher"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvRegisterTitle" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardRegister"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        app:cardBackgroundColor="@color/surface"
-        app:cardCornerRadius="18dp"
-        app:cardElevation="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvRegisterSubtitle">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <EditText
-                android:id="@+id/etRegisterName"
-                style="@style/SmartGymInputField"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Full name"
-                android:inputType="textPersonName" />
-
-            <EditText
-                android:id="@+id/etRegisterEmail"
-                style="@style/SmartGymInputField"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:hint="Email address"
-                android:inputType="textEmailAddress" />
-
-            <EditText
-                android:id="@+id/etRegisterPassword"
-                style="@style/SmartGymInputField"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:hint="Create password"
-                android:inputType="textPassword" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintTop_toBottomOf="@id/tvRegSubtitle" />
 
     <Button
-        android:id="@+id/btnRegister"
+        android:id="@+id/btnGetStarted"
         style="@style/SmartGymPrimaryButton"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:text="Register"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardRegister" />
+        android:layout_marginTop="48dp"
+        android:text="Get Started"
+        app:layout_constraintTop_toBottomOf="@id/ivRegLogo" />
 
     <TextView
-        android:id="@+id/tvGoToLogin"
+        android:id="@+id/tvBackToLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Login"
+        android:layout_marginTop="24dp"
+        android:text="Already have an account? Login"
         android:textColor="@color/primary"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnRegister" />
+        app:layout_constraintTop_toBottomOf="@id/btnGetStarted" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

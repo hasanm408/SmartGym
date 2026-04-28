@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#1E3A8A</color>
-    <color name="primary_dark">#162B66</color>
-    <color name="accent">#0EA5E9</color>
-    <color name="background">#F3F6FB</color>
-    <color name="surface">#FFFFFFFF</color>
-    <color name="text_primary">#0F172A</color>
-    <color name="text_secondary">#475569</color>
-    <color name="success">#16A34A</color>
-    <color name="divider">#E2E8F0</color>
+    <color name="primary">#4CAF50</color>
+    <color name="primary_dark">#2E7D32</color>
+    <color name="primary_light">#C8E6C9</color>
+    <color name="accent">#FFB300</color>
+    <color name="background">#F7F8FA</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="text_primary">#121212</color>
+    <color name="text_secondary">#424242</color>
+    <color name="success">#388E3C</color>
+    <color name="divider">#BDBDBD</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gradient_start">#4CAF50</color>
+    <color name="gradient_end">#2E7D32</color>
+    <color name="disabled_button">#804CAF50</color> <!-- 50% opacity primary -->
 </resources>

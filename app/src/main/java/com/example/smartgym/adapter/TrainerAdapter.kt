@@ -9,36 +9,31 @@ import com.example.smartgym.R
 import com.example.smartgym.model.Trainer
 
 class TrainerAdapter(
-    private val trainerList: List<Trainer>,
-    private val onTrainerClick: (Trainer) -> Unit
+    private val trainers: List<Trainer>,
+    private val onItemClick: (Trainer) -> Unit
 ) : RecyclerView.Adapter<TrainerAdapter.TrainerViewHolder>() {
 
+    class TrainerViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val tvName = view.findViewById<TextView>(R.id.tvTrainerName)
+        val tvInfo = view.findViewById<TextView>(R.id.tvTrainerInfo)
+        val tvTime = view.findViewById<TextView>(R.id.tvTrainerTime)
+        val btnView = view.findViewById<View>(R.id.btnViewDetails)
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TrainerViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_trainer, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_trainer, parent, false)
         return TrainerViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: TrainerViewHolder, position: Int) {
-        val trainer = trainerList[position]
-        holder.bind(trainer)
+        val trainer = trainers[position]
+        holder.tvName.text = trainer.name
+        holder.tvInfo.text = "Exp: ${trainer.experience} yrs | Age: ${trainer.age}"
+        holder.tvTime.text = "${trainer.time} Daily"
+        
+        holder.itemView.setOnClickListener { onItemClick(trainer) }
+        holder.btnView.setOnClickListener { onItemClick(trainer) }
     }
 
-    override fun getItemCount(): Int = trainerList.size
-
-    inner class TrainerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val tvName: TextView = itemView.findViewById(R.id.tvTrainerName)
-        private val tvSpecialization: TextView = itemView.findViewById(R.id.tvTrainerSpecialization)
-        private val tvExperience: TextView = itemView.findViewById(R.id.tvTrainerExperience)
-
-        fun bind(trainer: Trainer) {
-            tvName.text = trainer.name
-            tvSpecialization.text = "Specialization: ${trainer.specialization}"
-            tvExperience.text = "Experience: ${trainer.experience}"
-
-            itemView.setOnClickListener {
-                onTrainerClick(trainer)
-            }
-        }
-    }
+    override fun getItemCount() = trainers.size
 }

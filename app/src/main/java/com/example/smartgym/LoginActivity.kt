@@ -24,10 +24,35 @@ class LoginActivity : AppCompatActivity() {
 
             if (email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Please enter email and password", Toast.LENGTH_SHORT).show()
-            } else {
-                startActivity(Intent(this, DashboardActivity::class.java))
-                finish()
+                return@setOnClickListener
             }
+
+            // Check Users
+            val user = AppData.users.find { it.email == email && it.password == password }
+            if (user != null) {
+                AppData.currentUser = user
+                val intent = if (user.selectedTrainerName == null) {
+                    Intent(this, TrainerListActivity::class.java)
+                } else {
+                    AppData.selectedTrainer = AppData.trainers.find { it.name == user.selectedTrainerName }
+                    Intent(this, DashboardActivity::class.java)
+                }
+                startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK))
+                finish()
+                return@setOnClickListener
+            }
+
+            // Check Trainers
+            val trainer = AppData.trainers.find { it.email == email && it.password == password }
+            if (trainer != null) {
+                AppData.currentTrainer = trainer
+                val intent = Intent(this, TrainerDashboardActivity::class.java)
+                startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK))
+                finish()
+                return@setOnClickListener
+            }
+
+            Toast.makeText(this, "Account not found. Please register.", Toast.LENGTH_SHORT).show()
         }
 
         tvRegister.setOnClickListener {
